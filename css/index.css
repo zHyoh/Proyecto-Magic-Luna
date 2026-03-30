@@ -23,7 +23,7 @@ body {
 .grid{
     display:grid;
     grid-template-columns: repeat(3,1fr);
-    gap:1.25rem;
+    gap:20px;
 }
 /*estilos UI*/
 .card{
@@ -40,7 +40,7 @@ body {
     }
 }
 .card img{
-    width:100;
+    width:100%;
     display: block;
 }
 .card-title{
