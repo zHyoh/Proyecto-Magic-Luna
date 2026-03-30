@@ -50,3 +50,35 @@ body {
     background: #020617;
     border-top:1px solid #334155;
 }
+
+.modal{
+    display:none;
+    position: fixed;
+    z-index: 99;
+    inset:0;
+    background:rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+}
+.modal img{
+    max-width: 90%;
+    max-height: 90%;
+    border:3px solid #60a5fa;
+    border-radius: 0.75rem;
+    box-shadow: 0 0 1.25rem #000;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+.footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
