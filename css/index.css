@@ -37,32 +37,36 @@ h2 {
     letter-spacing: 1px;
 }
 
-/*grid*/
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
-/*estilos UI*/
 .card {
     background: linear-gradient(145deg, #1e293b, #0f172a);
     border: 2px solid #334155;
     overflow: hidden;
     cursor: pointer;
     transition: 0.3s;
-    box-sizing: 0 0 0.5rem #000;
+    box-shadow: 0 0 0.5rem #000;
+}
 
-    &:hover {
-        transform: scale(1.03);
-        border-color: #60a5fa;
-        box-shadow: 0 0 1rem #3b82f6;
-    }
+.card:hover {
+    transform: scale(1.03);
+    border-color: #60a5fa;
+    box-shadow: 0 0 1rem #3b82f6;
 }
 
 .card img {
     width: 100%;
     display: block;
+}
+
+.card-foods {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .card-title {
@@ -71,6 +75,14 @@ h2 {
     font-size: 0.9rem;
     background: #020617;
     border-top: 1px solid #334155;
+}
+
+.text-foods {
+    font-size: 0.85rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.4;
 }
 
 .modal {
@@ -102,12 +114,24 @@ h2 {
 
 .footer {
     text-align: center;
-    padding: 10px;
+    padding: 20px;
     font-size: 0.8rem;
     opacity: 0.6;
+    line-height: 1.5;
 }
 
-.text-foods {
-    font-size: 0.75rem;
-    text-align: center;
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
 }
