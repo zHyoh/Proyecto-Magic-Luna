@@ -11,7 +11,10 @@ body {
 }
 
 .container {
-    padding: 1rem;
+    padding: 1.5rem;
+    max-width: 1400px;
+    /* Un poco más ancho para que luzcan los mapas */
+    margin: 0 auto;
 }
 
 .header {
@@ -39,17 +42,21 @@ h2 {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    /* Un poco más de espacio entre cartas */
 }
 
 .card {
     background: linear-gradient(145deg, #1e293b, #0f172a);
     border: 2px solid #334155;
+    border-radius: 4px;
     overflow: hidden;
     cursor: pointer;
     transition: 0.3s;
     box-shadow: 0 0 0.5rem #000;
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover {
@@ -60,29 +67,46 @@ h2 {
 
 .card img {
     width: 100%;
+    height: auto;
+    /* Permite que la imagen crezca según su proporción original */
+    max-height: 350px;
+    /* Altura máxima para que no ocupe toda la pantalla */
+    object-fit: contain;
+    /* Asegura que se vea el mapa COMPLETO sin cortes */
+    background: #000;
+    /* Fondo negro por si el mapa es más angosto */
     display: block;
 }
 
 .card-foods {
     width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.card-foods img {
+    max-height: none;
+    /* La tabla de comidas puede ser todo lo larga que necesite */
 }
 
 .card-title {
-    padding: 1rem;
+    padding: 0.8rem;
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     background: #020617;
     border-top: 1px solid #334155;
+    font-weight: bold;
+    margin-top: auto;
+    /* Empuja el título siempre al fondo si las imágenes varían de altura */
 }
 
 .text-foods {
     font-size: 0.85rem;
     text-align: center;
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto;
     line-height: 1.4;
+    color: #94a3b8;
 }
 
 .modal {
@@ -90,34 +114,39 @@ h2 {
     position: fixed;
     z-index: 99;
     inset: 0;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.9);
     justify-content: center;
     align-items: center;
 }
 
 .modal img {
-    max-width: 90%;
-    max-height: 90%;
-    border: 3px solid #60a5fa;
-    border-radius: 0.75rem;
-    box-shadow: 0 0 1.25rem #000;
+    max-width: 95%;
+    max-height: 90vh;
+    border: 2px solid #60a5fa;
+    border-radius: 0.5rem;
 }
 
 .close {
     position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 2rem;
+    top: 15px;
+    right: 25px;
+    font-size: 2.5rem;
     color: white;
     cursor: pointer;
 }
 
 .footer {
     text-align: center;
-    padding: 20px;
+    padding: 40px 20px;
     font-size: 0.8rem;
-    opacity: 0.6;
-    line-height: 1.5;
+    opacity: 0.5;
+    line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
