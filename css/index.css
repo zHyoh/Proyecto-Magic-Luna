@@ -13,7 +13,6 @@ body {
 .container {
     padding: 1.5rem;
     max-width: 1400px;
-    /* Un poco más ancho para que luzcan los mapas */
     margin: 0 auto;
 }
 
@@ -44,7 +43,6 @@ h2 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;
-    /* Un poco más de espacio entre cartas */
 }
 
 .card {
@@ -68,13 +66,9 @@ h2 {
 .card img {
     width: 100%;
     height: auto;
-    /* Permite que la imagen crezca según su proporción original */
     max-height: 350px;
-    /* Altura máxima para que no ocupe toda la pantalla */
     object-fit: contain;
-    /* Asegura que se vea el mapa COMPLETO sin cortes */
     background: #000;
-    /* Fondo negro por si el mapa es más angosto */
     display: block;
 }
 
@@ -86,7 +80,6 @@ h2 {
 
 .card-foods img {
     max-height: none;
-    /* La tabla de comidas puede ser todo lo larga que necesite */
 }
 
 .card-title {
@@ -97,7 +90,6 @@ h2 {
     border-top: 1px solid #334155;
     font-weight: bold;
     margin-top: auto;
-    /* Empuja el título siempre al fondo si las imágenes varían de altura */
 }
 
 .text-foods {
